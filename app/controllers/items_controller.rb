@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
+        format.turbo_stream
         format.html { redirect_to item_url(@item), notice: "Item was successfully created." }
         format.json { render :show, status: :created, location: @item }
       else

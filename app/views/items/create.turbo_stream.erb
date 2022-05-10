@@ -1,0 +1,6 @@
+<!-- Refresh preview list -->
+<%= turbo_stream.prepend "items", @item %>
+
+<!-- Reset form -->
+<%= turbo_stream.replace "new_item", partial: 'items/form', locals: { item: Item.new } %>
+
